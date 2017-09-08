@@ -15,6 +15,10 @@ describe ("anagram") do
         expect(anagram("fdpwg", "icemAn")).to(eq("Please enter real words"))
     end
 
+    it("returns 'Please enter real words' if the inputs are cccu and iceman")do
+        expect(anagram("cccu", "icemAn")).to(eq("Please enter real words"))
+    end
+
     it("returns 'These words are antigrams' if the inputs hi and bye")do
         expect(anagram("hi", "bye")).to(eq("These words are antigrams"))
     end
@@ -28,6 +32,6 @@ describe ("anagram") do
     end
 
     it("returns 'These words are neither anagrams or antigrams. 7 letters match: a, c, e, e, i, m, n' if the inputs Ci(nemaek) and !Icem#anu!")do
-    expect(anagram("Ci(nemaek)", "!Icem#anu!")).to(eq("These words are neither anagrams or antigrams. 7 letters match: a, c, e, e, i, m, n"))
-end
+        expect(anagram("Ci(nemaek)", "!Icem#anu!")).to(eq("These words are neither anagrams or antigrams. 7 letters match: a, c, e, e, i, m, n"))
+    end
 end

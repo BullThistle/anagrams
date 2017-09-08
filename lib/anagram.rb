@@ -12,10 +12,29 @@ end
 
 def is_word(arr)
     flag = 0
+    temp1 = arr[0]
+    temp2 = arr[1]
     for i in 0..arr.length do
         if (arr[i] == 'a' || arr[i] ==  'e' || arr[i] ==  'i' || arr[i] ==  'o' || arr[i] ==  'u' || arr[i] ==  'y')
             flag = 1
         end
+    end
+    for i in 2..arr.length do
+        if ((temp1 == temp2) && (temp2 == arr[i]))
+            flag = 0
+            puts "flag"
+            puts flag
+        end
+        # puts arr
+        # puts "\n"
+        # puts temp1
+        # puts "\n"
+        # puts temp2
+        # puts "\n"
+        # puts arr[i]
+        # puts "\n"
+        temp1 = temp2
+        temp2 = arr[i]
     end
     flag
 end
@@ -77,3 +96,5 @@ def anagram(str1, str2)
     arr2 = word2.word_to_array
     output = out(arr1, arr2)
 end
+
+anagram("cccu", "iceman")
