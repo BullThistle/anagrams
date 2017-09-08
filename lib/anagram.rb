@@ -1,11 +1,17 @@
 def anagram(str1, str2)
     #Downcases str1 and str2
+    str1 = str1.gsub(/\W+/, '')
+    str2 = str2.gsub(/\W+/, '')
+
     str1 = str1.downcase
     str2 = str2.downcase
 
     #Splits str1 and str2 in to arrays
     arr1 = str1.split("")
     arr2 = str2.split("")
+
+    puts arr1
+    puts arr2
 
     #Finds if there are vowels in the arrays
     flag1 = 0
@@ -31,8 +37,6 @@ def anagram(str1, str2)
     #Sorts arr1 and arr2
     arr1 = arr1.sort
     arr2 = arr2.sort
-
-
 
     #Returns true if arr1 is the same as arr2
     if (arr1 <=> arr2) == 0
