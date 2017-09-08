@@ -25,14 +25,6 @@ def is_word(arr)
             puts "flag"
             puts flag
         end
-        # puts arr
-        # puts "\n"
-        # puts temp1
-        # puts "\n"
-        # puts temp2
-        # puts "\n"
-        # puts arr[i]
-        # puts "\n"
         temp1 = temp2
         temp2 = arr[i]
     end
@@ -96,5 +88,3 @@ def anagram(str1, str2)
     arr2 = word2.word_to_array
     output = out(arr1, arr2)
 end
-
-anagram("cccu", "iceman")
