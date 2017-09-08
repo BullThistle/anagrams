@@ -19,11 +19,15 @@ describe ("anagram") do
         expect(anagram("hi", "bye")).to(eq("These words are antigrams"))
     end
 
-    it("returns 'These words are neither anagrams or antigrams' if the inputs hi and hello")do
-        expect(anagram("hi", "hello")).to(eq("These words are neither anagrams or antigrams"))
+    it("returns 'These words are neither anagrams or antigrams. Only 1 letter matches: h' if the inputs hi and hello")do
+        expect(anagram("hi", "hello")).to(eq("These words are neither anagrams or antigrams. Only 1 letter matches: h"))
     end
 
     it("returns 'These words are anagrams' if the inputs Ci(nema) and !Icem#an!")do
         expect(anagram("Ci(nema)", "!Icem#an!")).to(eq("These words are anagrams"))
     end
+
+    it("returns 'These words are neither anagrams or antigrams. 7 letters match: a, c, e, e, i, m, n' if the inputs Ci(nemaek) and !Icem#anu!")do
+    expect(anagram("Ci(nemaek)", "!Icem#anu!")).to(eq("These words are neither anagrams or antigrams. 7 letters match: a, c, e, e, i, m, n"))
+end
 end

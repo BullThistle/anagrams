@@ -27,6 +27,18 @@ def is_antigram(arr1, arr2)
     flag
 end
 
+def letters_in_common(arr1, arr2)
+    letters = Array.new
+    for i in 0..(arr1.length - 1) do
+        for j in 0..(arr2.length - 1) do
+            if arr1[i] == arr2[j]
+                letters.push(arr1[i])
+            end
+        end
+    end
+    letters
+end
+
 def out(arr1, arr2)
     if (is_word(arr1) == 0 || is_word(arr2) == 0)
         return "Please enter real words"
@@ -35,7 +47,20 @@ def out(arr1, arr2)
     elsif is_antigram(arr1, arr2) == 0
         return "These words are antigrams"
     else
-        return "These words are neither anagrams or antigrams"
+        letters = letters_in_common(arr1, arr2)
+        number = letters.length.to_s
+        letters = letters.join
+        letters = letters.gsub('', ', ')
+        lettersarr = Array.new
+        for i in 2..(letters.length - 3)
+            lettersarr.push(letters[i])
+        end
+        lettersarr = lettersarr.join
+        if number == "1"
+            return "These words are neither anagrams or antigrams. Only " + number + " letter matches: " + lettersarr
+        else
+            return "These words are neither anagrams or antigrams. " + number + " letters match: " + lettersarr
+        end
     end
 end
 
