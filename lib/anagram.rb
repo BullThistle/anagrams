@@ -1,4 +1,7 @@
 def anagram(str1, str2)
+    str1 = str1.downcase
+    str2 = str2.downcase
+
     arr1 = str1.split("")
     arr2 = str2.split("")
 
@@ -6,18 +9,8 @@ def anagram(str1, str2)
     arr2 = arr2.sort
 
     if (arr1 <=> arr2) == 0
-        puts "true"
         return true
     else
-        puts "false"
         return false
     end
 end
-
-puts "Enter a string"
-str1 = gets.chomp
-
-puts "Enter another string"
-str2 = gets.chomp
-
-anagram(str1, str2)
