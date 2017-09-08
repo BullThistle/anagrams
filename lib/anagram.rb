@@ -27,10 +27,7 @@ def is_antigram(arr1, arr2)
     flag
 end
 
-def anagram(str1, str2)
-    arr1 = string_to_array(str1)
-    arr2 = string_to_array(str2)
-
+def out(arr1, arr2)
     if (is_word(arr1) == 0 || is_word(arr2) == 0)
         return "Please enter real words"
     elsif (arr1 <=> arr2) == 0
@@ -42,14 +39,20 @@ def anagram(str1, str2)
     end
 end
 
-def call
-    puts "enter1"
-    str1 = gets.chomp
-
-    puts "enter2"
-    str2 = gets.chomp
-
-    anagram(str1, str2)
+def anagram(str1, str2)
+    arr1 = string_to_array(str1)
+    arr2 = string_to_array(str2)
+    output = out(arr1, arr2)
 end
 
-call
+# def call
+#     puts "enter1"
+#     str1 = gets.chomp
+
+#     puts "enter2"
+#     str2 = gets.chomp
+
+#     anagram(str1, str2)
+# end
+
+# call

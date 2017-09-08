@@ -23,7 +23,7 @@ describe ("anagram") do
         expect(anagram("hi", "hello")).to(eq("These words are neither anagrams or antigrams"))
     end
 
-    it("returns 'These words are anagrams' if the inputs hi and hello")do
+    it("returns 'These words are anagrams' if the inputs Ci(nema) and !Icem#an!")do
         expect(anagram("Ci(nema)", "!Icem#an!")).to(eq("These words are anagrams"))
     end
 end
