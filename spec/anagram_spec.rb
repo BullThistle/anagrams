@@ -34,4 +34,9 @@ describe ("anagram") do
     it("returns 'These words are neither anagrams or antigrams. 7 letters match: a, c, e, e, i, m, n' if the inputs Ci(nemaek) and !Icem#anu!")do
         expect(anagram("Ci(nemaek)", "!Icem#anu!")).to(eq("These words are neither anagrams or antigrams. 7 letters match: a, c, e, e, i, m, n"))
     end
+
+    it("returns 'Hey! We don't like palindromes around here and there's no way we'll except one as an input!' if the inputs are madam and iceman")do
+        expect(anagram("madam", "iceman")).to(eq("Hey! We don't like palindromes around here and there's no way we'll except one as an input!"))
+    end
+
 end

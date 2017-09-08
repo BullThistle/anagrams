@@ -8,6 +8,15 @@ class Word
         arr = str.split("")
         arr = arr.sort
     end
+
+    def is_palindrome
+        str_rev = @word.reverse
+        if @word == str_rev
+            return true
+        else
+            return false
+        end
+    end
 end
 
 def is_word(arr)
@@ -55,9 +64,11 @@ def letters_in_common(arr1, arr2)
     letters
 end
 
-def out(arr1, arr2)
+def out(arr1, arr2, word1, word2)
     if (is_word(arr1) == 0 || is_word(arr2) == 0)
         return "Please enter real words"
+    elsif ((word1.is_palindrome == true) || (word2.is_palindrome == true))
+        return "Hey! We don't like palindromes around here and there's no way we'll except one as an input!"
     elsif (arr1 <=> arr2) == 0
         return "These words are anagrams"
     elsif is_antigram(arr1, arr2) == 0
@@ -86,5 +97,7 @@ def anagram(str1, str2)
 
     arr1 = word1.word_to_array
     arr2 = word2.word_to_array
-    output = out(arr1, arr2)
+    output = out(arr1, arr2, word1, word2)
 end
+
+anagram("madam", "iceman")
