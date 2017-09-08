@@ -99,5 +99,3 @@ def anagram(str1, str2)
     arr2 = word2.word_to_array
     output = out(arr1, arr2, word1, word2)
 end
-
-anagram("madam", "iceman")
