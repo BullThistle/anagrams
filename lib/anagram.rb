@@ -1,8 +1,13 @@
-def string_to_array(str)
-    str = str.gsub(/\W+/, '')
-    str = str.downcase
-    arr = str.split("")
-    arr = arr.sort
+class Word
+    def initialize(word)
+        @word = word
+    end
+    def word_to_array
+        str = @word.gsub(/\W+/, '')
+        str = str.downcase
+        arr = str.split("")
+        arr = arr.sort
+    end
 end
 
 def is_word(arr)
@@ -65,19 +70,10 @@ def out(arr1, arr2)
 end
 
 def anagram(str1, str2)
-    arr1 = string_to_array(str1)
-    arr2 = string_to_array(str2)
+    word1 = Word.new(str1)
+    word2 = Word.new(str2)
+
+    arr1 = word1.word_to_array
+    arr2 = word2.word_to_array
     output = out(arr1, arr2)
 end
-
-# def call
-#     puts "enter1"
-#     str1 = gets.chomp
-
-#     puts "enter2"
-#     str2 = gets.chomp
-
-#     anagram(str1, str2)
-# end
-
-# call
