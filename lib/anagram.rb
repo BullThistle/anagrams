@@ -8,20 +8,22 @@ def anagram(str1, str2)
     arr2 = str2.split("")
 
     #Finds if there are vowels in the arrays
-    flag = 0
+    flag1 = 0
+    flag2 = 0
+
     for i in 0..arr1.length do
         if (arr1[i] == 'a' || arr1[i] ==  'e' || arr1[i] ==  'i' || arr1[i] ==  'o' || arr1[i] ==  'u' || arr1[i] ==  'y')
-            flag = 1
+            flag1 = 1
         end
     end
 
     for i in 0..arr2.length do
         if (arr2[i] == 'a' || arr2[i] ==  'e' || arr2[i] ==  'i' || arr2[i] ==  'o' || arr2[i] ==  'u' || arr2[i] ==  'y')
-            flag = 1
+            flag2 = 1
         end
     end
 
-    if (flag == 0)
+    if (flag1 == 0 || flag2 == 0)
         puts "1out"
         return "Please enter real words"
     end
@@ -38,10 +40,14 @@ def anagram(str1, str2)
         return "These words are anagrams"
     else
         flag = 0
-        for i in 0..arr1.length do
-            for j in 0..arr2.length do
+        for i in 0..(arr1.length - 1) do
+            for j in 0..(arr2.length - 1) do
                 if arr1[i] == arr2[j]
                     flag = 1;
+                    puts arr1[i]
+                    puts arr2[j]
+                    # puts arr1
+                    # puts arr2
                 end
             end
         end

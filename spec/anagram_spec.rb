@@ -16,7 +16,7 @@ describe ("anagram") do
     end
 
     it("returns 'These words are antigrams' if the inputs hi and bye")do
-        expect(anagram("hi", "bye")).to(eq("Please enter real words"))
+        expect(anagram("hi", "bye")).to(eq("These words are antigrams"))
     end
 
     it("returns 'These words are neither anagrams or antigrams' if the inputs hi and hello")do
